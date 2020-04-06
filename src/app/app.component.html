@@ -1,0 +1,28 @@
+<div>
+  <fieldset class = "outline">
+    <div class = "insideText">
+      <p>London Clock</p>
+    </div>
+    <div>
+      <div class = "inputdiv">
+        <div class = "showtime" (click)="editHour()" [style.display]="pauseHour ? 'none' : 'inline'">
+          {{hour}}
+        </div>
+        <input class = "setuptime" type = "tel" #box1 (keyup.enter)="showHour(box1.value)" [style.display]="pauseHour ? 'inline' : 'none'" value = 0>
+        <span>&nbsp;:&nbsp;</span>
+        <div class = "showtime" (click)="editMinute()" [style.display]="pauseMinute ? 'none' : 'inline'">
+          {{minute}}
+        </div>
+        <input class = "setuptime" type = "tel" #box2 (keyup.enter)="showMinute(box2.value)" [style.display]="pauseMinute ? 'inline' : 'none'" value = 0>
+        <span>&nbsp;:&nbsp;</span>
+        <div class = "showtime" (click)="editSecond()" [style.display]="pauseSecond ? 'none' : 'inline'">
+          {{second}}
+        </div>
+        <input class = "setuptime" type = "tel" #box3 (keyup.enter)="showSecond(box3.value)" [style.display]="pauseSecond ? 'inline' : 'none'" value = 0>
+        <span>&nbsp;&nbsp;</span>
+        <div class = "showtime" (click)="editAMPM()" [style.display]="pauseAMPM ? 'none' : 'inline'">{{AMPM}}</div>
+        <input class = "setuptime" type = "text" #box4 (keyup.enter)="showAMPM(box4.value)" [style.display]="pauseAMPM ? 'inline' : 'none'" value = "AM">
+      </div>
+    </div>
+  </fieldset>
+</div>
